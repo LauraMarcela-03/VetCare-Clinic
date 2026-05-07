@@ -1,8 +1,10 @@
-﻿using System;
+﻿namespace VetCareClinic.Domain.Interfaces.Services;
 
-public class Class1
+public interface IProcedureService
 {
-	public Class1()
-	{
-	}
+    Task<IEnumerable<Procedure>> GetAllAsync();
+    Task<Procedure?> GetByIdAsync(int id);
+    Task<Procedure> CreateAsync(Procedure procedure);
+    Task UpdateAsync(Procedure procedure);
+    Task DeleteAsync(int id);
 }

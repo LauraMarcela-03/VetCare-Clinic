@@ -1,8 +1,6 @@
-﻿using System;
+﻿using VetCareClinic.Domain.Entities;
+namespace VetCareClinic.Domain.Interfaces.Repositories;
 
-public class Class1
+public interface IPetRepository : IGenericRepository<Pet>
 {
-	public Class1()
-	{
-	}
 }

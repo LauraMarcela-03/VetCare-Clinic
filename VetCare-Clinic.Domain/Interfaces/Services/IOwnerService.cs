@@ -1,8 +1,10 @@
-﻿using System;
+﻿namespace VetCareClinic.Domain.Interfaces.Services;
 
-public class Class1
+public interface IOwnerService
 {
-	public Class1()
-	{
-	}
+    Task<IEnumerable<Owner>> GetAllAsync();
+    Task<Owner?> GetByIdAsync(int id);
+    Task<Owner> CreateAsync(Owner owner);
+    Task UpdateAsync(Owner owner);
+    Task DeleteAsync(int id);
 }

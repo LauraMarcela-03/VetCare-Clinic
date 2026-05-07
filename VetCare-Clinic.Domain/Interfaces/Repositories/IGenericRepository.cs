@@ -1,8 +1,10 @@
-﻿using System;
+﻿namespace VetCareClinic.Domain.Interfaces.Repositories;
 
-public class Class1
+public interface IGenericRepository<T> where T : class
 {
-	public Class1()
-	{
-	}
+    Task<IEnumerable<T>> GetAllAsync();
+    Task<T?> GetByIdAsync(int id);
+    Task<T> AddAsync(T entity);
+    Task UpdateAsync(T entity);
+    Task DeleteAsync(int id);
 }

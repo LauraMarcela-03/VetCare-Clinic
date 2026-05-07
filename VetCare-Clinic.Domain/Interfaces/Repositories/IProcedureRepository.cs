@@ -1,8 +1,7 @@
-﻿using System;
+﻿using VetCareClinic.Domain.Entities;
 
-public class Class1
+namespace VetCareClinic.Domain.Interfaces.Repositories;
+
+public interface IProcedureRepository : IGenericRepository<Procedure>
 {
-	public Class1()
-	{
-	}
 }
