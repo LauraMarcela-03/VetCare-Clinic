@@ -1,0 +1,6 @@
+@VetCare_Clinic.API_HostAddress = http://localhost:5255
+
+GET {{VetCare_Clinic.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

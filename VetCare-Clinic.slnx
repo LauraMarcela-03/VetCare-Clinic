@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="VetCare-Clinic.API/VetCare-Clinic.API.csproj" />
+  <Project Path="VetCare-Clinic.DataAccess/VetCare-Clinic.DataAccess.csproj" />
+  <Project Path="VetCare-Clinic.Domain/VetCare-Clinic.Domain.csproj" />
+</Solution>
