@@ -1,4 +1,5 @@
-﻿namespace VetCareClinic.Domain.Interfaces.Services;
+﻿using VetCareClinic.Domain.Entities;
+namespace VetCareClinic.Domain.Interfaces.Services;
 
 public interface IProcedureService
 {

@@ -1,4 +1,5 @@
-﻿namespace VetCareClinic.Domain.Entities;
+﻿using VetCareClinic.Domain.Enums;
+namespace VetCareClinic.Domain.Entities;
 
 public class Pet
 {

@@ -129,12 +129,10 @@ public class VetCareClinicDbContext : DbContext
         // -------------------------------------------------
 
         modelBuilder.Entity<MedicalRecord>()
-
-            .HasOne(m => m.Pet)
-
-            .WithMany(p => p.MedicalRecords)
-
-            .HasForeignKey(m => m.PetId);
+    .HasOne(m => m.Pet)
+    .WithMany(p => p.MedicalRecords)
+    .HasForeignKey(m => m.PetId)
+    .OnDelete(DeleteBehavior.NoAction);
 
 
         // -------------------------------------------------
