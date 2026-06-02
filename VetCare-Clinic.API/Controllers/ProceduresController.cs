@@ -38,4 +38,30 @@ public class ProceduresController : ControllerBase
 
         return Ok(_mapper.Map<ProcedureResponse>(createdProcedure));
     }
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(int id)
+    {
+        var procedure = await _service.GetByIdAsync(id);
+        if (procedure is null)
+            return NotFound();
+        return Ok(
+            _mapper.Map<ProcedureResponse>(procedure));
+    }
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(
+        int id,
+        CreateProcedureRequest request)
+    {
+        var procedure =
+            _mapper.Map<Procedure>(request);
+        procedure.Id = id;
+        await _service.UpdateAsync(procedure);
+        return NoContent();
+    }
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        await _service.DeleteAsync(id);
+        return NoContent();
+    }
 }

@@ -74,4 +74,38 @@ public class VeterinariansController : ControllerBase
 
     }
 
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(int id)
+    {
+        var veterinarian = await _service.GetByIdAsync(id);
+
+        if (veterinarian is null)
+            return NotFound();
+
+        return Ok(
+            _mapper.Map<VeterinarianResponse>(veterinarian));
+    }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(
+        int id,
+        CreateVeterinarianRequest request)
+    {
+        var veterinarian =
+            _mapper.Map<Veterinarian>(request);
+
+        veterinarian.Id = id;
+
+        await _service.UpdateAsync(veterinarian);
+
+        return NoContent();
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        await _service.DeleteAsync(id);
+
+        return NoContent();
+    }
 }

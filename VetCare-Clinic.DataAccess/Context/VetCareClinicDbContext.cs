@@ -4,6 +4,8 @@ using VetCareClinic.Domain.Entities;
 
 namespace VetCareClinic.DataAccess.Context;
 
+using VetCareClinic.DataAccess.Seeders;
+
 public class VetCareClinicDbContext : DbContext
 
 {
@@ -172,6 +174,11 @@ public class VetCareClinicDbContext : DbContext
             .WithMany(p => p.AppointmentProcedures)
 
             .HasForeignKey(ap => ap.ProcedureId);
+
+        modelBuilder.Entity<Procedure>()
+            .Property(p => p.Price)
+            .HasPrecision(18, 2);
+        DataSeeder.Seed(modelBuilder);
 
     }
 
